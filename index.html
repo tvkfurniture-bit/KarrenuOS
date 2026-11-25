@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+
+  <!-- SEO & Brand Metadata -->
+  <title>KARRENU Garden Systems — Modular Rooftop &amp; Balcony Gardens (Kolkata)</title>
+  <meta name="description" content="Your Space. Your Garden. Your Way. Customizable rust-free 1-inch UV-UPVC garden stands, roof-safe HDPE drainage mats, grow bags &amp; turnkey balcony setups in Kolkata.">
+  <meta name="theme-color" content="#15472E">
+
+  <!-- OpenGraph / Social Share Metadata -->
+  <meta property="og:title" content="KARRENU Garden Systems — Your Space. Your Garden. Your Way.">
+  <meta property="og:description" content="Modular rust-free UV-UPVC rooftop &amp; balcony gardening systems engineered for Kolkata summers and monsoons.">
+  <meta property="og:type" content="website">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html, body {
+      width: 100%;
+      height: 100%;
+      height: 100dvh;
+      overflow: hidden;
+      background-color: #FAF9F6;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
+    }
+
+    /* Full-Screen Embedded Web App Frame */
+    #storeFrame {
+      width: 100%;
+      height: 100%;
+      height: 100dvh;
+      border: none;
+      display: block;
+      background: #FAF9F6;
+    }
+
+    /* Botanical Editorial Preloader */
+    #loader {
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(145deg, #0F3522 0%, #15472E 100%);
+      color: #FFFFFF;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      text-align: center;
+      z-index: 9999;
+      transition: opacity 0.4s ease, visibility 0.4s ease;
+    }
+    .brand-mark {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: #2D7A4E;
+      color: #FFFFFF;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      font-size: 26px;
+      margin-bottom: 14px;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+    }
+    .brand-loader {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+    .brand-loader span {
+      color: #A7F3D0;
+      font-weight: 600;
+    }
+    .brand-tagline {
+      font-size: 13px;
+      color: #D1FAE5;
+      margin: 4px 0 22px;
+      letter-spacing: 0.02em;
+    }
+    .spinner {
+      width: 34px;
+      height: 34px;
+      border: 3.5px solid rgba(255, 255, 255, 0.18);
+      border-top-color: #C85A32;
+      border-radius: 50%;
+      animation: spin 0.75s linear infinite;
+    }
+    .loader-text {
+      font-size: 13.5px;
+      color: #E5E7EB;
+      margin-top: 14px;
+      font-weight: 500;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    .loaded #loader {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Branded Botanical Preloader -->
+  <div id="loader">
+    <div class="brand-mark">K</div>
+    <div class="brand-loader">KARRENU <span>Garden Systems</span></div>
+    <div class="brand-tagline">Your Space. Your Garden. Your Way.</div>
+    <div class="spinner"></div>
+    <div class="loader-text">Loading modular rooftop &amp; balcony systems...</div>
+  </div>
+
+  <!-- Google Apps Script Web App Frame -->
+  <iframe
+    id="storeFrame"
+    src=""
+    allow="geolocation; camera; microphone; clipboard-read; clipboard-write; payment"
+    title="KARRENU Garden Systems">
+  </iframe>
+
+  <script>
+    /**********************************************************************************
+     * ⚙️ CONFIGURATION: Paste your active Google Apps Script Web App (/exec) URL below
+     **********************************************************************************/
+    const APPS_SCRIPT_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbwqFr60AkVUOCW4qD-MUOIy50PWDLqtR2gjPqZtxbvJdyl9eWnIywK13Pz2NBc_OS0J/exec";
+
+    // Forward all Query Parameters (?app=admin, ?design=CFG-..., ?utm_source=..., ?ref=...) and Hash (#shop)
+    const currentParams = window.location.search || "";
+    const currentHash = window.location.hash || "";
+    const separator = APPS_SCRIPT_WEBAPP_URL.indexOf("?") !== -1 ? "&" : "?";
+    const targetUrl =
+      APPS_SCRIPT_WEBAPP_URL +
+      (currentParams ? separator + currentParams.slice(1) : "") +
+      currentHash;
+
+    const iframe = document.getElementById("storeFrame");
+    iframe.src = targetUrl;
+
+    // Hide preloader once iframe finishes loading
+    iframe.onload = function() {
+      document.body.classList.add("loaded");
+    };
+
+    // Fallback: hide preloader after 3.2s even if external script delays onload
+    setTimeout(function() {
+      document.body.classList.add("loaded");
+    }, 3200);
+  </script>
+</body>
+</html>
